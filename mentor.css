@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(54, 54, 54);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+body{
+    margin: 0;
+    padding-bottom: 5rem;
+}
+
+h1, h2, h3 {
+    color: hsl(234, 12%, 34%);
+    line-height: 1.2;
+}
+
+.wrapper{
+    padding-inline: 2rem;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.wrapper--narrow{
+    max-width: 550px;
+}
+
+header{
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    margin-block: 6rem;
+} 
+
+h1{
+    font-weight: light;
+    font-size: 2.25rem;
+}
+
+h1 span {
+    font-weight: bold;
+}
+
+header > p {
+    font-size: 1.25rem;
+}
+
+.layout-grid{
+    --gap: 2rem;
+
+    display: grid;
+    grid-auto-columns: 1fr;
+    gap: var(--gap);
+}
+
+@media (min-width: 800px){
+    .layout-grid{
+        grid-template-areas: 
+        '... two   ....'
+        'one two   four'
+        'one three four'
+        '... three ....';
+    }
+}
+
+.layout-grid > * {
+    flex: 1;
+}
+
+
+.card{
+
+    padding: 2rem;
+    border-top: 0.25rem solid;
+    border-radius: 0.25rem;
+    box-shadow: 0 1rem 1.5rem -0.5rem rgb(0 50 100 / 0.15);
+   
+}
+
+.layout-grid > :nth-child(1) {
+    grid-area: one;
+}
+.layout-grid > :nth-child(2) {
+    grid-area: two;
+}
+.layout-grid > :nth-child(3) {
+    grid-area: three;
+}
+.layout-grid > :nth-child(4) {
+    grid-area: four;
+}
+
+.card_title{
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.border-teal{
+    border-color: teal;
+}
+.border-red{
+    border-color: red;
+}
+.border-yellow{
+    border-color: yellow;
+}
+.border-blue{
+    border-color: blue;
+}
+
+
+
